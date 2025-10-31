@@ -10,7 +10,6 @@
     --color-green-500: oklch(72.3% 0.219 149.579);
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-cyan-400: oklch(78.9% 0.154 211.53);
-    --color-cyan-700: oklch(52% 0.105 223.128);
     --color-cyan-800: oklch(45% 0.085 224.283);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-600: oklch(54.6% 0.245 262.881);
@@ -465,6 +464,9 @@
     height: 100%;
     z-index: -1;
   }
+  #cards-container {
+    perspective: 1000px;
+  }
   .card {
     position: absolute;
     width: 320px;
@@ -476,16 +478,6 @@
     transition: transform 0.8s ease, z-index 0.3s ease, box-shadow 0.3s;
     cursor: pointer;
     backface-visibility: hidden;
-  }
-  .lin {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
-    border-color: var(--color-cyan-700);
-    padding-block: calc(var(--spacing) * 2);
-    &:last-child {
-      --tw-border-style: none;
-      border-style: none;
-    }
   }
   .card:hover {
     box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);

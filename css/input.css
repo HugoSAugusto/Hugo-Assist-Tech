@@ -19,6 +19,10 @@
         z-index: -1;
     }
 
+    #cards-container {
+        perspective: 1000px;
+    }
+
     .card {
         position: absolute;
         width: 320px;
@@ -30,10 +34,6 @@
         transition: transform 0.8s ease, z-index 0.3s ease, box-shadow 0.3s;
         cursor: pointer;
         backface-visibility: hidden;
-    }
-
-    .lin{
-        @apply py-2 border-b border-cyan-700 last:border-none;
     }
 
     .card:hover {

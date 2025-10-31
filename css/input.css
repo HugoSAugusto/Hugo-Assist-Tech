@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+
+@layer components{ 
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        background: #0a0a0a;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Canvas animado */
+    canvas {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .card {
+        position: absolute;
+        width: 320px;
+        height: 420px;
+        background: linear-gradient(135deg, #001d2e, #023954);
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 255, 255, 0.25);
+        padding: 1.5rem;
+        transition: transform 0.8s ease, z-index 0.3s ease, box-shadow 0.3s;
+        cursor: pointer;
+        backface-visibility: hidden;
+    }
+
+    .lin{
+        @apply py-2 border-b border-cyan-700 last:border-none;
+    }
+
+    .card:hover {
+        box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+        transform: scale(1.03);
+    }
+
+    .card.active {
+        transform: translateX(0) scale(1.1) translateZ(80px);
+        z-index: 3;
+    }
+
+    .card.left {
+        transform: translateX(-200px) scale(0.9) rotateY(15deg);
+        z-index: 2;
+    }
+
+    .card.right {
+        transform: translateX(200px) scale(0.9) rotateY(-15deg);
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            width: 260px;
+            height: 500px;
+        }
+        .card.left {
+            transform: translateX(-120px) scale(0.9) rotateY(10deg);
+        }
+        .card.right {
+            transform: translateX(120px) scale(0.9) rotateY(-10deg);
+        }
+    }
+
+     @media (max-width: 480px) {
+        #cards-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .card.left, .card.right {
+            transform: none !important;
+            width: 98%;
+            height: auto;
+        }
+        .card.left {
+            transform: translateX(-60px) scale(0.95) rotateY(4deg);
+        }
+        .card.right {
+            transform: translateX(60px) scale(0.95) rotateY(-4deg);
+        }
+    }
+}

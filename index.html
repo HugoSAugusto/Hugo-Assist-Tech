@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Assist Tech | Suporte & Help Desk</title>
+    <link rel="stylesheet" href="css/input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="overflow-x-hidden">
+    <canvas id="bg"></canvas>
+
+    <header class="fixed w-full top-0 bg-black/50 backdrop-blur-md text-white px-6 py-4 flex justify-between items-center z-10">
+        <h1 class="font-bold text-xl">Hugo Assist Tech</h1>
+        <nav class="space-x-6 hidden md:flex">
+            <a href="#servicos" class="hover:text-blue-400">Serviços</a>
+            <a href="#contato" class="hover:text-blue-400">Contato</a>
+         </nav>
+    </header>
+
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6">Soluções em Informática e Help Desk</h2>
+        <p class="max-w-2xl mb-8 text-gray-300">Atendimento rápido, confiável e sob medida para empresas e pessoas físicas. Resolva seus problemas de TI com quem entende de tecnologia.</p>
+        <a href="#contato" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold shadow-lg transition">Solicitar Orçamento</a>
+    </section>
+
+    <section id="servicos" class="py-24 bg-black/60 backdrop-blur-md text-center"> 
+         
+        <div id="cards-container" class="relative w-full flex justify-center items-center" style="height: 450px;">
+            <!-- Card Empresas -->
+            <div id="cardEmpresas" class="card active">
+                <h2 class="text-2xl font-bold mb-4 text-cyan-400 text-center">Empresas</h2>
+                <ul class="text-left text-gray-200 divide-y divide-cyan-800">
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-desktop text-cyan-400 mr-2"></i>Manutenção preventiva e corretiva</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-network-wired text-cyan-400 mr-2"></i>Redes, servidores e backup corporativo</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-shield-halved text-cyan-400 mr-2"></i>Segurança da informação e antivírus</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-headset text-cyan-400 mr-2"></i>Suporte remoto e presencial</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-chart-line text-cyan-400 mr-2"></i>Consultoria e otimização de performance</li>
+                </ul>
+                <a target="_blank" class="btn-whats flex items-center gap-2 bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full font-semibold shadow-lg transition text-white mt-4"><i class="fa-brands fa-whatsapp text-white text-xl"></i>Falar no WhatsApp</a>
+            </div>
+
+            <!-- Card Pessoas Físicas -->
+            <div id="cardPessoas" class="card right">
+                <h2 class="text-2xl font-bold mb-4 text-blue-400 text-center">Pessoas Físicas</h2>
+                <ul class="text-left text-gray-200 divide-y divide-cyan-800">
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-compact-disc text-cyan-400 mr-2"></i>Formatação e instalação de sistemas</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-screwdriver-wrench text-cyan-400 mr-2"></i>Upgrade e limpeza de hardware</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-brain text-cyan-400 mr-2"></i>Otimização e remoção de vírus</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-wifi text-cyan-400 mr-2"></i>Configuração de Wi-Fi e impressoras</li>
+
+                    <li class="py-2 flex items-center"><i class="fa-solid fa-bolt text-cyan-400 mr-2"></i>Instalação de SSD e sistemas rápidos</li>
+                </ul>
+                <a target="_blank" class="btn-whats flex items-center gap-2 bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full font-semibold shadow-lg transition text-white mt-4"><i class="fa-brands fa-whatsapp text-white text-xl"></i>Falar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 text-center bg-blue-950/40 backdrop-blur-md">
+        <h3 class="text-3xl font-bold mb-8">Entre em Contato</h3>
+        <form class="max-w-md mx-auto flex flex-col space-y-4">
+            <input type="text" placeholder="Seu nome" class="p-3 rounded bg-gray-800 text-white focus:outline-none">
+            <input type="email" placeholder="Seu e-mail" class="p-3 rounded bg-gray-800 text-white focus:outline-none">
+            <textarea placeholder="Descreva seu problema" class="p-3 rounded bg-gray-800 text-white focus:outline-none"></textarea>
+            <button class="bg-blue-600 hover:bg-blue-700 p-3 rounded font-semibold">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="text-center py-8 bg-black/60">
+        <p>© 2025 Hugo Assist Tech - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // define o número uma vez
+        const numeroWhats = "5521978926365";
+        const mensagem = "Olá! Gostaria de um orçamento.";
+
+        // cria o link
+        const linkWhats = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".btn-whats").forEach(btn => {
+                btn.setAttribute("href", linkWhats);
+            });
+        });
+
+
+        const canvas = document.getElementById("bg");
+        const ctx = canvas.getContext("2d");
+
+        let w, h, particles = [];
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * w;
+                this.y = Math.random() * h;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.size = Math.random() * 10;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > w) this.vx *= -1;
+                if (this.y < 0 || this.y > h) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = "#00bcd7";
+                ctx.fill();
+            }
+        }
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.strokeStyle = "rgba(0,188,212," + (1 - dist / 120) + ")";
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, w, h);
+            for (let p of particles) {
+                p.update();
+                p.draw();
+            }
+            drawLines();
+            requestAnimationFrame(animate);
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+        animate();
+
+        //cards services
+        const cardEmpresas = document.getElementById("cardEmpresas");
+        const cardPessoas = document.getElementById("cardPessoas");
+
+        function bringToFront(clickedCard, otherCard) {
+            clickedCard.classList.add("active");
+            otherCard.classList.remove("active");
+
+            if (clickedCard.id === "cardEmpresas") {
+                cardEmpresas.classList.remove("left", "right");
+                cardPessoas.classList.remove("left", "right");
+                cardEmpresas.classList.add("active");
+                cardPessoas.classList.add("right");
+            } else {
+                cardPessoas.classList.remove("left", "right");
+                cardEmpresas.classList.remove("left", "right");
+                cardPessoas.classList.add("active");
+                cardEmpresas.classList.add("left");
+            }
+        }
+
+        cardEmpresas.addEventListener("click", () => bringToFront(cardEmpresas, cardPessoas));
+        cardPessoas.addEventListener("click", () => bringToFront(cardPessoas, cardEmpresas));
+    </script>
+</body>
+</html>

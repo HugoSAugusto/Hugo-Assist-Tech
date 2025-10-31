@@ -6,6 +6,8 @@
     <title>Hugo Assist Tech | Suporte & Help Desk</title>
     <link rel="stylesheet" href="css/input.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" sizes="180x180" href="img/favicon-180.png">
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="overflow-x-hidden">
@@ -20,9 +22,10 @@
     </header>
 
     <section class="h-screen flex flex-col justify-center items-center text-center px-4">
-        <h2 class="text-4xl md:text-6xl font-bold mb-6">Soluções em Informática e Help Desk</h2>
-        <p class="max-w-2xl mb-8 text-gray-300">Atendimento rápido, confiável e sob medida para empresas e pessoas físicas. Resolva seus problemas de TI com quem entende de tecnologia.</p>
-        <a href="#contato" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold shadow-lg transition">Solicitar Orçamento</a>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-cyan-400"> Suporte Técnico e Help Desk Profissional em Informática </h1>
+        <p class="max-w-2xl mb-8 text-gray-300 leading-relaxed"> A <strong>Hugo Assist Tech</strong> oferece <strong>serviços de informática</strong>, <strong>manutenção de computadores</strong>, 
+        <strong>redes e suporte técnico remoto</strong> para empresas e pessoas físicas. 
+        Atendimento ágil, confiável e totalmente personalizado para as suas necessidades.</p>
     </section>
 
     <section id="servicos" class="py-24 bg-black/60 backdrop-blur-md text-center"> 
@@ -184,6 +187,82 @@
 
         cardEmpresas.addEventListener("click", () => bringToFront(cardEmpresas, cardPessoas));
         cardPessoas.addEventListener("click", () => bringToFront(cardPessoas, cardEmpresas));
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Hugo Assist Tech",
+        "alternateName": "Hugo Assistência Técnica",
+        "image": "https://hugosassisttech.com.br/img/favicon-512.png",
+        "url": "https://hugosassisttech.com.br/",
+        "telephone": "+55 21 97892-6365",
+        "email": "hugo.contatrabalho@gmail.com",
+        "priceRange": "R$",
+        "currenciesAccepted": "BRL",
+        "paymentAccepted": "Pix, Cartão, Dinheiro",
+        "servesCuisine": "Tecnologia",
+        "sameAs": [
+            "https://www.instagram.com/hugoaugusto20/",
+            "https://www.linkedin.com/in/hugosaugusto/",
+            "https://hugosaugusto.netlify.app/"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Centro, São João de Meriti",
+            "addressLocality": "São João de Meriti",
+            "addressRegion": "RJ",
+            "postalCode": "25520-000",
+            "addressCountry": "BR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -22.8025,
+            "longitude": -43.3728
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "08:00",
+                "closes": "14:00"
+            }
+        ],
+        "areaServed": {
+            "@type": "Place",
+            "name": "Rio de Janeiro"
+        },
+        "description": "A Hugo Assist Tech oferece suporte técnico, manutenção de computadores, redes e help desk para empresas e pessoas físicas. Atendimento rápido e confiável em São João de Meriti, Rio de Janeiro.",
+        "founder": {
+            "@type": "Person",
+            "name": "Hugo Augusto Soares Ferreira",
+            "jobTitle": "Técnico em Informática",
+            "url": "https://hugosassisttech.com.br/"
+        },
+        "department": [
+            {
+                "@type": "ComputerRepairService",
+                "name": "Manutenção e Suporte de Computadores"
+            },
+            {
+                "@type": "ITService",
+                "name": "Help Desk e Consultoria em TI"
+            }
+        ]
+    }
     </script>
 </body>
 </html>

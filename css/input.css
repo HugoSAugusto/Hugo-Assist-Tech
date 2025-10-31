@@ -22,7 +22,7 @@
     .card {
         position: absolute;
         width: 320px;
-        height: 420px;
+        height: 440px;
         background: linear-gradient(135deg, #001d2e, #023954);
         border-radius: 1rem;
         box-shadow: 0 10px 30px rgba(0, 255, 255, 0.25);

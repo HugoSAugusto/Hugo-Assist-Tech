@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto | Hugo Assist Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" sizes="180x180" href="../img/favicon-180.png">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="overflow-x-hidden text-white bg-[#050505]">
+
+<!-- CANVAS -->
+<canvas id="bg" class="fixed inset-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+<!-- HEADER -->
+<header class="fixed w-full top-0 bg-black/50 backdrop-blur-md px-6 py-4 flex justify-between items-center z-10 border-b border-cyan-500/20">
+    <a href="loja.html">
+        <h1 class="font-bold text-xl text-cyan-400">Hugo Assist Tech</h1>
+    </a>
+</header>
+
+
+<!-- CONTEÚDO -->
+<section class="pt-32 pb-24 px-6 md:px-20 lg:px-52">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-400 mb-6">
+        <a href="loja.html" class="hover:text-cyan-400">Loja</a> /
+        <span id="breadNome" class="text-cyan-400"></span>
+    </nav>
+
+    <!-- Botão Voltar -->
+    <a href="loja.html" class="text-cyan-400 hover:underline block mb-6">
+        ← Voltar para a Loja
+    </a>
+
+    <!-- Card do produto -->
+    <div class="bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-cyan-500/10 shadow-lg">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <!-- Imagem -->
+            <div class="flex justify-center">
+                <img id="produtoImagem" class=" rounded-lg shadow-lg max-h-[400px] object-cover">
+            </div>
+
+            <!-- Informações -->
+            <div>
+                <h1 id="produtoNome" class="text-3xl md:text-4xl font-bold text-cyan-400"></h1>
+                <p id="produtoPreco" class="text-green-400 font-bold text-3xl my-4"></p>
+
+                <p id="produtoDescricao" class="text-gray-300 mb-6"></p>
+
+                <h3 class="text-xl font-semibold text-white mb-3">Especificações</h3>
+
+                <ul id="produtoSpecs" class="space-y-2 text-gray-300">
+                    <!-- specs via JS -->
+                </ul>
+
+                <!-- Botão Comprar -->
+                <a id="btnComprar"
+                target="_blank"
+                class="mt-8 inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Comprar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- SCRIPTS -->
+<script src="dados/produtos.js"></script>
+<script src="../js/produto.js"></script>
+<script src="../js/canvas.js"></script>
+
+</body>
+</html>

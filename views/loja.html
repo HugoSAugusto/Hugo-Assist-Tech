@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja | Hugo Assist Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" sizes="180x180" href="../img/favicon-180.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="overflow-x-hidden text-white bg-[#050505]">
+    <canvas id="bg" class="fixed"></canvas>
+
+    <!-- HEADER -->
+    <header class="fixed w-full top-0 bg-black/50 backdrop-blur-md px-6 py-4 flex justify-between items-center z-10">
+        <h1 class="font-bold text-xl">Hugo Assist Tech</h1>
+        <!-- <nav class="space-x-6 hidden md:flex">
+            <a href="index.html" class="hover:text-cyan-400">Início</a>
+            <a href="#produtos" class="hover:text-cyan-400">Produtos</a>
+            <a href="#contato" class="hover:text-cyan-400">Contato</a>
+        </nav> -->
+    </header>
+
+    <section class="h-screen pt-28 flex flex-col justify-center items-center text-center px-6 bg-gray-500/10 backdrop-blur-sm">
+        <h2 class="text-3xl md:text-5xl font-bold text-cyan-400 mb-4">Computadores Prontos Para Trabalhar</h2>
+        <p class="text-gray-300 max-w-xl">
+            Desempenho, garantia e suporte técnico direto da Hugo Assist Tech.
+        </p>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="py-24 bg-black/50 backdrop-blur-md">
+        <h3 class="text-center text-3xl font-bold mb-12">Nossos Computadores</h3>
+        <div id="lista-produtos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-8 md:px-20"></div>
+    </section>
+    
+
+    <footer class="text-center py-8 bg-black/60">
+        <p>© 2025 Hugo Assist Tech - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="dados/produtos.js"></script>
+    <script>
+        // criação dinâmica
+        document.addEventListener("DOMContentLoaded", () => {
+            const numeroWhats = "5521978926365";
+            const mensagem = "Olá! Tenho interesse em um PC da loja!";
+            const linkWhats = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
+
+            const container = document.getElementById("lista-produtos");
+    
+            if (!window.produtos) {
+                console.error("⚠ produtos.js não carregou corretamente!");
+            return;
+            }
+
+            window.produtos.forEach(produto => {
+                container.innerHTML += `
+                <div class="bg-gray-900/70 p-5 rounded-xl shadow-lg hover:shadow-blue-500/30 transition">
+                    <img src="${produto.imagem}" class="rounded-lg mb-4" alt="${produto.nome}">
+                    <h4 class="text-xl font-bold text-cyan-400 mb-2">${produto.nome}</h4>
+                    <p class="text-green-400 font-bold mb-4">R$ ${produto.preco.toFixed(2)}</p>
+            
+                    <a href="produto.html?id=${produto.id}#produtos" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg block text-center"> Ver Detalhes </a>
+                </div>`;
+            });
+
+            document.querySelectorAll(".btn-whats").forEach(btn => {
+                btn.setAttribute("href", linkWhats);
+            });
+        })
+
+        // Se voltar da página do produto, rola direto para os produtos
+        if (window.location.hash === "#produtos") {
+            document.getElementById("produtos").scrollIntoView({
+                behavior: "smooth",
+               block: "start"
+            });
+        }
+    </script>
+
+    
+    <script src="../js/canvas.js"></script>
+
+</body>
+</html>
